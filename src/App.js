@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Header } from "./components/Header/Header";
+import { Toaster } from "react-hot-toast";
+import { NavRoutes } from "./routes/NavRoutes";
+import { useData } from "./contexts/DataProvider";
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
+import { Loader } from "./components/Loader/Loader";
 
 function App() {
+  const { loading } = useData();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {loading && <Loader />}
+      <NavRoutes />
+      <ScrollToTop />
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={{
+          success: { duration: 1500 },
+          error: { duration: 1500 },
+        }}
+        containerStyle={{
+          top: "6rem",
+        }}
+      />
     </div>
   );
 }
