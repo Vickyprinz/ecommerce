@@ -10,15 +10,15 @@ export const Footer = () => {
 
   return (
     <div className="footer">
-      <small> &copy; {copyrightYear} Chirag Taluja</small>
+      <small> &copy; {copyrightYear} VickyPrinz</small>
       <div className="social-links">
-        <Link to="https://twitter.com/ichiragtaluja" target="_blank">
+        <Link to="https://twitter.com/" target="_blank">
           <BsTwitter />
         </Link>
-        <Link to="https://github.com/ichiragtaluja" target="_blank">
+        <Link to="https://github.com/Vickyprinz" target="_blank">
           <ImGithub />
         </Link>
-        <Link to="https://www.linkedin.com/in/ichiragtaluja" target="_blank">
+        <Link to="https://www.linkedin.com/" target="_blank">
           <SiLinkedin />
         </Link>
       </div>
